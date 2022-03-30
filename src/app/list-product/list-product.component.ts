@@ -47,5 +47,12 @@ export class ListProductComponent implements OnInit {
     }
 
   }
+  public incrementProduct(p:Product):void{
+    let i= this.list.indexOf(p)
+    
+      this.list[i].quantity--;
+    
+
+  }
 
 }
