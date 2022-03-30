@@ -9,6 +9,7 @@ import { Product } from '../model/product';
 export class ListProductComponent implements OnInit {
   public titleApp: string;
   public list:Product[];
+  public priceMax: number=400;
   constructor() {
 
    }

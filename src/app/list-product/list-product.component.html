@@ -1,5 +1,10 @@
 <p>{{ titleApp }}</p>
 <h1>Product List</h1>
+<div class="form-group">
+    <label for="">search by price</label>
+    <input name="priceMax" [(ngModel)]="priceMax" type="number" class="form-control">
+    {{priceMax}}
+</div>
 <table class="'table">
     <thead>
         <tr>
@@ -13,8 +18,8 @@
             <th>action</th>
         </tr>
     </thead>
-    <tbody>
-        <tr *ngFor="let product of list">
+    <tbody *ngFor="let product of list">
+        <tr *ngIf="priceMax>product.price" >
         <td>{{product.id}}</td>
         <td>{{product.title}}</td>
         <td>{{product.descreption}}</td>
