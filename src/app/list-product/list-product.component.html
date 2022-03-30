@@ -1,0 +1,32 @@
+<p>{{ titleApp }}</p>
+<h1>Product List</h1>
+<table class="'table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>descreption</th>
+            <th>price</th>
+            <th>quantity</th>
+            <th>picture</th>            
+            <th>like ❤ </th>
+            <th>action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of list">
+        <td>{{product.id}}</td>
+        <td>{{product.title}}</td>
+        <td>{{product.descreption}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.quantity}}</td>
+        <td><img src="{{product.picture}}"></td>
+        <td><button class="btn btn-sm btn-success">Like❤{{product.like}} </button></td>
+        <td>
+            <button class="btn btn-sm btn-warning" [hidden]="product.quantity===0"> Buy </button>
+            <p *ngIf="product.quantity===0 ">out of stock</p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
