@@ -21,7 +21,8 @@
         <td>{{product.price}}</td>
         <td>{{product.quantity}}</td>
         <td><img src="{{product.picture}}"></td>
-        <td><button class="btn btn-sm btn-success">Like❤{{product.like}} </button></td>
+        <td><button class="btn btn-sm btn-success" (click)="incrementLike(product)">
+            Like❤{{product.like}} </button></td>
         <td>
             <button class="btn btn-sm btn-warning" [hidden]="product.quantity===0"> Buy </button>
             <p *ngIf="product.quantity===0 ">out of stock</p>

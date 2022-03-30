@@ -40,5 +40,12 @@ export class ListProductComponent implements OnInit {
 
     ]
   }
+  public incrementLike(p:Product):void{
+    let i= this.list.indexOf(p)
+    if(i!=-1){
+      this.list[i].like++;
+    }
+
+  }
 
 }
